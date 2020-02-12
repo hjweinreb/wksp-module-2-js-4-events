@@ -5,6 +5,29 @@
 // If they click inside of the required time, you should tell them that they've won,
 // else let them know that they've lost.
 
+let win = false;
+
+function clicker() {
+    alert("You win :)");
+    win === true;
+    document.removeEventListener('click', clicker);
+}
+console.log(win);
+
+setTimeout(function() {
+    if (win === false) {
+    
+    alert("You lose :(");
+
+    document.removeEventListener('click', clicker);
+    }
+}, 1000);
+
+document.addEventListener('click', clicker);
+
+
+
+
 // Hints:
 // - Target the <body>
 // - setTimout is your friend.
